@@ -12,7 +12,7 @@ server.set('trust proxy', 1);
 
 // Configure CORS to allow specific origins
 const corsOptions = {
-  origin: ['https://alquran-al-kareem.vercel.app', 'http://localhost:5173'], // Add your frontend origin(s) here
+  origin: ['https://alquran-al-kareem.vercel.app','https://alquran-al-kareem.vercel.app/surahs', 'http://localhost:5173'], // Add your frontend origin(s) here
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true, // If you need to send cookies or authorization headers
   optionsSuccessStatus: 204
