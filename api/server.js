@@ -9,7 +9,16 @@ const port = process.env.PORT || 3000;
 const server = express();
 
 server.set('trust proxy', 1);
-server.use(cors());
+
+// Configure CORS to allow specific origins
+const corsOptions = {
+  origin: ['https://alquran-al-kareem.vercel.app', 'http://localhost:5173'], // Add your frontend origin(s) here
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, // If you need to send cookies or authorization headers
+  optionsSuccessStatus: 204
+};
+server.use(cors(corsOptions));
+
 server.use(express.json());
 server.use(routes);
 
